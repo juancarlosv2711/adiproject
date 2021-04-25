@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="EstiloRegistro.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="Funciones.js"></script>
+    <script type="text/javascript" src="validacion.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body>
+    <div class="container" id="ContenedorTotal">
+        <form action="CompletarRegistro.php" autocomplete="off" role="form" method="post" name="Guardar">
+            <!-- Contenedor Principal-->
+            <div class="" id="ContenedorIndex">
+                <div class="row">
+                    <div class="col-auto">
+                        <img class="" src="Imagenes/ADISR_4-02.png" width="200px" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-auto">
+                        <h3>Información de tu Cuenta</h3>
+                    </div>
+                    <div class="col-12">
+
+                        <input id="email" type="email" class="form-control" placeholder="Correo Electrónico" value="" name="Correo">
+
+                    </div>
+
+                    <div class="col-auto">
+                        <small id="emailHelp2" class="form-text text-muted"><span id="validar"></span></small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <input type="password" class="form-control" id="Pw1" placeholder="Contraseña" name="Password" oninput="LimitePwRegistro()" minlength="8" maxlength="16">
+
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <input type="password" class="form-control" id="Pw2" placeholder="Contraseña" oninput="ValidacionTiempoReal()" minlength="8" maxlength="16">
+                    </div>
+                    <div class="col-auto">
+                        <small id="emailHelp2" class="form-text text-muted">Mínimo 8 caracteres y Máximo 16 caracteres</small>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto col-auto">
+                        <button type="" class="btn btn-primary" onclick="ValidacionPW(); return false;" id="BtnProseguir" disabled="true">Siguiente</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Contenedor de Informacion Personal de las personas-->
+            <div class="container-fluid" id="ContenedorInformacionPersonal" style="display: none">
+                <h3><img src="Imagenes/iconfinder_create_new_2639799.ico" alt="" width="70px" height="70px">Información Personal</h3>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Tipo de Identificación</label>
+                        <select class="browser-default custom-select" name="TipoIdentificacion" id="TipoIdentificacion" onchange="CambiarPlaceHolder()" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="Nacional">Nacional</option>
+                            <option value="DIMEX">DIMEX</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Número de Identificación</label>
+                        <input type="text" class="form-control" placeholder="Número de identificación" id="Cedula" name="NumeroIdentificacion" required />
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-sm-12 col-md-4">
+                        <label for="">Nombre</label>
+                        <input type="text" class="form-control" placeholder="Nombre" id="Nombre" autocomplete="off" name="Nombre" onkeydown="return alphaOnly(event);" required />
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                        <label for="">Primer Apellido</label>
+                        <input type="text" class="form-control" placeholder="Primer Apellido" id="Apellido1" name="Apellido1" autocomplete="off" onkeydown="return alphaOnly(event);" required />
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <label for="">Segundo Apellido</label>
+                        <input type="text" class="form-control" placeholder="Segundo Apellido" id="Apellido2" name="Apellido2" autocomplete="off" onkeydown="return alphaOnly(event);" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Teléfono</label>
+                        <input type="text" class="form-control" placeholder="8888-8888" id="Telefono" name="Telefono" autocomplete="off" onkeydown="return OnlyNumbers(event);" required />
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" id="FechaNacimiento" autocomplete="off" name="FechaNacimiento" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Género</label>
+                        <select class="browser-default custom-select" name="Genero" id="Genero" required>
+                            <option value="">Seleccione su Género</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Escolaridad</label>
+                        <select class="browser-default custom-select" name="Escolaridad" id="Escolaridad" required>
+                            <option value="">Seleccione una Opción</option>
+                            <option value="Primaria Completa">Primaria Completa</option>
+                            <option value="Primaria Imcompleta">Primaria Imcompleta</option>
+                            <option value="Secundaria Completa">Secundaria Completa</option>
+                            <option value="Secundaria Incompleta">Secundaria Incompleta</option>
+                            <option value="Universidad Completa">Universidad Completa</option>
+                            <option value="Universidad Incompleta">Universidad Incompleta</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                        <label for="">Provincia</label>
+                        <select class="browser-default custom-select" name="Provincia" id="IdProvincia" href="javascript:;" onchange="SelectCantones($('#IdProvincia').val()); GetNombreProvincia();" required>
+                            <option value="">Opciones</option>
+                            <option value="1">San Jose</option>
+                            <option value="2">Alajuela</option>
+                            <option value="3">Cartago</option>
+                            <option value="4">Heredia</option>
+                            <option value="5">Guanacaste</option>
+                            <option value="6">Puntarenas</option>
+                            <option value="7">Limón</option>
+                        </select>
+                        <input type="hidden" name="NombreProvincia" id="Provincias">
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <label for="">Cantón</label>
+                        <select class="browser-default custom-select" name="Cantones" id="IdCantones" href="javascript:;" onchange="SelectDistrito($('#IdCantones').val()); GetNombreCanton();" required>
+                            <option value="">Opciones</option>
+                        </select>
+                        <input type="hidden" name="NombreCanton" id="Cantones">
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <label for="">Distrito</label>
+                        <select class="browser-default custom-select" name="Distrito" id="IdDistrito" required>
+                            <option value="">Opciones</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="">Dirección</label>
+                        <input type="text" class="form-control" placeholder="Digite su Dirección" id="Direccion" autocomplete="off" name="Direccion" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="">Tipo de Usuario</label>
+                        <select class="browser-default custom-select" name="TipoUsuario" id="TipoUsuario" onchange="MostrarSumit();" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="Estudiante">Estudiante</option>
+                            <option value="Idea">Idea de Proyecto</option>
+                            <option value="Emprendedor">Emprendedor</option>
+                            <option value="Empresario">Empresario</option>
+                            <option value="Comerciante">Comerciante</option>
+                            <option value="Particular">Particular</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto col-auto">
+                        <button type="" class="btn btn-primary" onclick="RegresarC1(); return false;" id="Boton1">Atrás</button>
+                    </div>
+                    <div class="col-sm-auto col-auto" id="ContendorSiguiente">
+                        <button type="" class="btn btn-primary" onclick="EsconderInfoPersonal(); return false;" id="BtnSig">Siguiente</button>
+                    </div>
+                    <div class="col-sm-auto col-auto" style="display: none" id="ContendorSubmit">
+                        <button type="submit" class="btn btn-primary" name="Enviar" id="Boton1">Registrar</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Contenedor de la informacion Necesaria para la seccion de estudiante-->
+            <div class="container-fluid" id="ContenedorEstudiante" style="display: none">
+                <h3><img src="Imagenes/iconfinder_student_309036.ico" width="100px" height="100px" alt="">Registro de Estudiante</h3>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="">Nombre del Centro Educativo</label>
+                        <input type="text" name="CentroEducativo" class="form-control" placeholder="¿En cuál centro educativo está estudiando actualmente?" id="CentroEdu" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto col-auto">
+                        <button type="" class="btn btn-primary" onclick="EsconderFormularios(); return false;" id="Boton1">Atrás</button>
+                    </div>
+                    <div class="col-sm-auto col-auto">
+                        <button type="submit" class="btn btn-primary" name="Enviar" id="Boton1">Registrar</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <!-- Contenedor de la informacion Necesaria para la seccion de Emprendedor-->
+            <div class="container-flid" id="ContenedorEmprendedor" style="display: none">
+
+                <h3><img src="Imagenes/iconfinder_Followup_research_3533399.ico" alt="" width="70px" height="70px">Registro de Emprendedor</h3>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Nombre del Emprendimiento</label>
+                        <input type="text" class="form-control" placeholder="Nombre" name="NombreEmprendedor" id="NombreEmprendedor">
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label>Teléfono</label>
+                        <input type="text" class="form-control" placeholder="8888-8888" name="TelefonoEmprendedor" id="TelefonoEmprendedor" onkeydown="return OnlyNumbers(event);">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label>Dirección</label>
+                        <input type="text" class="form-control" placeholder="Dirección de su Emprendimiento" name="DireccionEmprendedor" id="DireccionEmprendedor">
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label>Página Web</label>
+                        <input type="text" class="form-control" placeholder="Pagína Web o Red Social" name="URLEmprendedor" id="URLEmprendedor">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Tipo identificación</label>
+                        <select class="browser-default custom-select" name="TipoIdentificacionEmprendedor" id="TipoIdentificacionEmprendedor">
+                            <option value="">Seleccioné una Opción</option>
+                            <option value="Cedula Fisica">Cédula Física</option>
+                            <option value="Cedula Juridica">Cédula Jurídica</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Número de Identificación</label>
+                        <input class="form-control" type="text" placeholder="888888888888" name="identificacionEmprendedor" id="identificacionEmprendedor" onkeydown="return OnlyNumbers(event);">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Tipo Sociedad</label>
+                        <select class="browser-default custom-select" name="TipoSociedadEmprendedor" id="TipoSociedadEmprendedor">
+                            <option value="">Seleccione una opción</option>
+                            <option value="Sociedad Anónima">Sociedad Anónima </option>
+                            <option value="Responsabilidad Ltda">Responsabilidad Limitada</option>
+                            <option value="Comandita Simple">Comandita Simple</option>
+                            <option value="Sociedad de Capital e Industria">Sociedad de Capital e Industria </option>
+                            <option value="Sociedad de Hecho">Sociedad de Hecho</option>
+                            <option value="Empresa Unipersonal">Empresa Unipersonal</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">¿Hace cuánto inicio su Emprendimiento?</label>
+                        <select class="browser-default custom-select" name="TiempoEmprendedor" id="TiempoEmprendedor">
+                            <option value="">Seleccione una Opción</option>
+                            <option value="0-1 año">0 a 1 año</option>
+                            <option value="1-3 años">1 a 3 años</option>
+                            <option value="3 o mas">3 o más años</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Cantidad de Empleados</label>
+                        <select class="browser-default custom-select" name="EmpleadosEmprendedor" id="EmpleadosEmprendedor">
+                            <option value="">Seleccione una Opción</option>
+                            <option value="0-5">0 a 5 empleados</option>
+                            <option value="6-10">6 a 10 empleados</option>
+                            <option value="11+">11 o más empleados</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Sector Comercial</label>
+                        <select class="browser-default custom-select" name="SectorProEmprendedor" id="SectorProEmprendedor">
+                            <option value="">Seleccione una Opción</option>
+                            <option value="Agropecuario">Agropecuario</option>
+                            <option value="Industria">Industria</option>
+                            <option value="Comercio">Comercio</option>
+                            <option value="Servicios">Servicios</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="">Descripción de la Actividad Económica</label>
+                        <input type="text" class="form-control" placeholder="Actividad Económica" name="DesActividadEconomicaEmprendedor" id="DesActividadEconomicaEmprendedor">
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-auto col-auto">
+                        <button type="" class="btn btn-primary" onclick="EsconderFormularios(); return false;" name="BtnAtrasEmprendedor" id="Boton1">Atrás</button>
+                    </div>
+                    <div class="col-sm-auto col-auto">
+                        <button type="submit" class="btn btn-primary" name="Enviar" id="Boton1">Registrar</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <!-- Contenedor de la informacion Necesaria para la seccion de Idea-->
+            <div class="container-fluid" id="ContenedorIdea" style="display: none">
+
+                <h3><img src="Imagenes/iconfinder_knowledge-idea-book-light-learning-concept-thought_3790092.ico" width="70px" height="70px" alt="">Registro Idea</h3>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Idea de Negocio</label>
+                        <input type="text" class="form-control" placeholder=" ¿Cual es su idea de Negocio? " name="ProyeccionIdea" id="ProyeccionIdea" autocomplete="off" />
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Sector comercial</label>
+                        <select class="browser-default custom-select" name="SectorProIdea" id="SectorProIdea">
+                            <option value="">Seleccioné una opción</option>
+                            <option value="Agropecuario">Agropecuario</option>
+                            <option value="Industria">Industria</option>
+                            <option value="Comercio">Comercio</option>
+                            <option value="Servicios">Servicios</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto col-auto">
+                        <button type="" class="btn btn-primary" onclick="EsconderFormularios(); return false;" name="BtnAtrasIdea" id="Boton1">Atras</button>
+                    </div>
+                    <div class="col-sm-auto col-auto">
+                        <button type="submit" class="btn btn-primary" name="Enviar" id="Boton1">Registrar</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <!-- Contenedor de la informacion Necesaria para la seccion de Empresario-->
+            <div class="container-fluid" id="ContenedorEmpresario" style="display:none">
+
+                <h3><img src="Imagenes/iconfinder_improving_quality_chart_2261330.ico" width="100px" height="100px" alt="">Registro de Empresario</h3>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Nombre Empresa</label>
+                        <input type="text" class="form-control" placeholder="Nombre" name="NombreEmpresa" id="NombreEmpresa" autocomplete="off" />
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Teléfono</label>
+                        <input type="text" class="form-control" placeholder="Teléfono de la Empresa" name="TelefonoEmpresa" id="TelefonoEmpresa" autocomplete="off" onkeydown="return OnlyNumbers(event);" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Dirección</label>
+                        <input type="text" class="form-control" placeholder="Dirección de la Empresa" name="DireccionEmpresa" id="DireccionEmpresa" autocomplete="off" />
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Dirección Página Web</label>
+                        <input type="text" class="form-control" placeholder="Pagína Web o Red Social de su Empresa" name="URLEmpresa" id="URLEmpresa" autocomplete="off" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Tipo identificación</label>
+                        <select class="browser-default custom-select" name="TipoIDEmpresa" id="Empresario">
+                            <option value="">Seleccione una opción</option>
+                            <option value="Cedula Fisica">Cédula Fisica</option>
+                            <option value="Juridica">Cédula Juridica</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Numero Identificación</label>
+                        <input type="text" class="form-control" placeholder="888888888888" id="IdEmpresa" autocomplete="off" name="IdEmpresa" onkeydown="return OnlyNumbers(event);" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Tipo Sociedad</label>
+                        <select class="browser-default custom-select" name="TipoSociedadEmpresa" id="TipoSociedadEmpresa">
+                            <option value="">Seleccione una opción</option>
+                            <option value="Sociedad Anónima">Sociedad Anónima </option>
+                            <option value="Responsabilidad Ltda">Responsabilidad Limitada</option>
+                            <option value="Comandita Simple">Comandita Simple</option>
+                            <option value="Sociedad de Capital e Industria">Sociedad de Capital e Industria </option>
+                            <option value="Sociedad de Hecho">Sociedad de Hecho</option>
+                            <option value="Empresa Unipersonal">Empresa Unipersonal</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">¿Hace cuánto inicio su Comercio?</label>
+                        <select class="browser-default custom-select" name="TiempoEmpresa" id="TiempoEmpresa">
+                            <option value="">Seleccione una opción</option>
+                            <option value="1 - 2">1 a 2 años</option>
+                            <option value="3 - 5">3 a 5 años</option>
+                            <option value="6 - 10">6 a 10 años</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Cantidad Empleados</label>
+                        <select class="browser-default custom-select" name="CantdEmpleadosEmpresa" id="EmpleadosEmpresa">
+                            <option value="">Seleccioné una opción</option>
+                            <option value="0 - 5">0 a 5</option>
+                            <option value="6 - 10">6 a 10</option>
+                            <option value="11 o mas">11 o mas</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Sector Comercial</label>
+                        <select class="browser-default custom-select" name="ActEconomicaEmpresa" id="ActivadadEconomica">
+                            <option value="">Seleccioné una opción</option>
+                            <option value="Agropecuario">Agropecuario</option>
+                            <option value="Industria">Industria</option>
+                            <option value="Comercio">Comercio</option>
+                            <option value="Servicios">Servicios</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <label for="">Descripción de la Actividad Económica</label>
+                        <input type="text" class="form-control" placeholder="Describa su actividad económica" name="DescripcionActEconomicaEmpresa" id="DescripcionActEconomicaEmpresa" autocomplete="off" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-auto col-auto">
+                        <button type="" class="btn btn-primary" onclick="EsconderFormularios(); return false;" id="Boton1">Atrás</button>
+                    </div>
+                    <div class="col-sm-auto col-auto">
+                        <button type="submit" class="btn btn-primary" name="Enviar" id="Boton1">Registrar</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <!-- Contenedor de la informacion Necesaria para la seccion de Comercio-->
+            <div class="container-fluid" id="ContenedorComercio" style="display:none">
+
+                <h3><img src="Imagenes/iconfinder_business_finance_money-19_2784214.ico" alt="" width="70px" height="70px">Registro Comerciante</h3>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Nombre Comercio</label>
+                        <input type="text" class="form-control" placeholder="Nombre" name="NombreComercio" id="NombreComercio" autocomplete="off" />
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Teléfono</label>
+                        <input type="text" class="form-control" placeholder="Teléfono de su comercio" name="TelefonoComercio" id="TelefonoComercio" autocomplete="off" onkeydown="return OnlyNumbers(event);" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Dirección</label>
+                        <input type="text" class="form-control" placeholder="Direccion de su comercio" name="DireccionComercio" id="DireccionComercio" autocomplete="off" />
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Dirección Pagina Web</label>
+                        <input type="text" class="form-control" placeholder="web o Red social de su Comercio" name="URLComercio" id="URLComercio" autocomplete="off" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Tipo Identificación</label>
+                        <select class="browser-default custom-select" name="TipoIdComercio" id="Comercio">
+                            <option value="">Seleccione una Opción</option>
+                            <option value="Cedula Fisica">Cédula Fisica</option>
+                            <option value="Juridica">Cédula Juridica</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Numero Identificación</label>
+                        <input type="text" class="form-control" placeholder="Digite la Cedula" name="NumeroIDComercio" id="NumeroIDComercio" autocomplete="off" onkeydown="return OnlyNumbers(event);" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Tipo de Sociedad</label>
+                        <select class="browser-default custom-select" name="TipoSociedadComercio" id="TipoSociedad">
+                            <option value="">Seleccione una Opción</option>
+                            <option value="Sociedad Anónima">Sociedad Anónima </option>
+                            <option value="Responsabilidad Ltda">Responsabilidad Limitada </option>
+                            <option value="Comandita Simple">Comandita Simple </option>
+                            <option value="Sociedad de Capital e Industria">Sociedad de Capital e Industria </option>
+                            <option value="Sociedad de Hecho">Sociedad de Hecho</option>
+                            <option value="Empresa Unipersonal">Empresa Unipersonal</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">¿Hace cuánto inicio su Comercio?</label>
+                        <select class="browser-default custom-select" name="TiempoComercio" id="TiempoComercio">
+                            <option value="">Seleccione una Opción</option>
+                            <option value="1 - 2">1 a 2 años</option>
+                            <option value="3 - 5">3 a 5 años</option>
+                            <option value="6 - 10">6 a 10 años</option>
+                        </select>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Cantidad Empleados</label>
+                        <select class="browser-default custom-select" name="EmpleadosComercio" id="Empleados">
+                            <option value="">Seleccione una Opción</option>
+                            <option value="0 - 5">0 a 5</option>
+                            <option value="6 - 10">6 a 10</option>
+                            <option value="11 o mas">11 o mas</option>
+
+                        </select>
+
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="">Sector comercial</label>
+                        <select class="browser-default custom-select" name="SectorProComercio" id="SectorProComercio">
+                            <option value="">Seleccione una Opción</option>
+                            <option value="Agropecuario">Agropecuario</option>
+                            <option value="Industria">Industria</option>
+                            <option value="Comercio">Comercio</option>
+                            <option value="Servicios">Servicios</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <label for="">Descripción de la Actividad Económica</label>
+                        <input type="text" class="form-control" placeholder="Describa su actividad" name="DescEconomicaComercio" id="DescEconomicaComercio" autocomplete="off" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-auto col-auto">
+                        <button type="" class="btn btn-primary" onclick="EsconderFormularios(); return false;" name="BtnAtrasComercio" id="Boton1">Atrás</button>
+                    </div>
+                    <div class="col-sm-auto col-auto">
+                        <button type="submit" class="btn btn-primary" name="Enviar" id="Boton1">Registrar</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</body></html>

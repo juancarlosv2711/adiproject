@@ -1,0 +1,92 @@
+*{   
+    text-align: center; 
+    
+}
+
+body{
+background: #2C3E50;
+background: -webkit-linear-gradient(to right, #FD746C, rgba(44, 62, 80, 0.18)), url(Imagenes/dinero.jpg);
+background: linear-gradient(to right, #FD746C, rgba(44, 62, 80, 0.18)), url(Imagenes/dinero.jpg);
+
+    
+}
+.col-12 h1{
+    margin-bottom: 94px;
+     font-family: BEQUIND;
+    color: #05A444;
+    
+   
+}
+img{
+    box-shadow: 10px 15px 15px #303934; 
+    border-radius: 20px;
+    
+}
+
+.container{
+    margin-top: 80px;
+   
+}
+
+#ContenedorImg button img{
+    width: 80%;
+      font-family: BEBAS NEUE;
+     
+}
+
+#ContenedorImg figure:hover > button{
+    transform: scale(1.3);
+    cursor: pointer;
+     
+}
+#ContenedorImg  h2{
+   color: #05A444;
+    text-shadow: 2px 2px 4px #72c313;
+     font-family: BEBAS NEUE;
+   
+}
+#ContenedorImg button {
+background:transparent;
+    border:0;
+    outline: none;
+     -webkit-transition: all 1.5s;
+}
+
+@media (max-width: 780px){
+*{
+    margin: auto;
+    text-align: center;
+    font-family: BEBAS NEUE;
+}
+    .col-12 h1{
+    margin-bottom: 10px;
+     font-family: BEQUIND;
+}
+#ContenedorImg figure:hover > button{
+    transform: scale(1.3);
+    cursor: pointer;
+    
+}
+.container{
+    margin-top: 0px;
+}
+    
+img{
+    box-shadow: 10px 15px 15px #303934; 
+    border-radius: 20px;
+}
+
+#ContenedorImg button img{
+    width: 40%;
+    height: 50%;
+}
+
+
+#ContenedorImg button {
+background:transparent;
+    border:0;
+    outline: none;
+    
+}
+    
+}

@@ -1,0 +1,220 @@
+*{   
+    font-family: 'BebasNeue Bold',sans-serif;  
+    margin: 0 auto;
+    padding-top: 5px;      
+}
+
+body{
+    background-image: url(Imagenes/Collage%20Tecnologia%202.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  
+  
+}
+
+#ContenedorTotal{
+    
+    padding: 25px;
+}
+
+#ContenedorIndex:hover{
+    opacity: 1;
+}
+
+#ContenedorInformacionPersonal:hover{
+    opacity: 1;
+}
+
+#ContenedorEstudiante:hover{
+    opacity: 1;
+}
+
+#ContenedorComercio:hover{
+     opacity: 1;
+}
+#ContenedorEmprendedor:hover{
+    opacity: 1;
+}
+ 
+#ContenedorEmpresario:hover{
+    opacity: 1;
+}
+
+#ContenedorIdea:hover{
+     opacity: 1;
+}
+
+#ContenedorIndex{ 
+    border-radius: 15px 50px 30px;
+    padding-top: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 18px;
+    width: 50%;
+    background-color: #ffffff;    
+    box-shadow: 8px 5px 15px #585252;
+    opacity: 0.8;
+    align-content: center;
+}
+
+#ContenedorInformacionPersonal{
+    border-radius: 15px 50px 30px;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 18px;  
+     width: 60%;
+      background-color: #fdfdfd;
+    box-shadow: 8px 5px 15px #585252;
+    opacity: 0.8;
+}
+
+#ContenedorEstudiante{
+    border-radius: 15px 50px 30px;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 18px;  
+     width: 50%;
+      background-color: #fdfdfd;
+     box-shadow: 8px 5px 15px #585252;
+    opacity: 0.8;
+}
+
+#ContenedorEmprendedor{
+    border-radius: 15px 50px 30px;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 18px;  
+     width: 60%;
+      background-color: #fdfdfd;
+    box-shadow: 8px 5px 15px #585252;
+    opacity: 0.8;
+}
+
+#ContenedorIdea{
+    border-radius: 15px 50px 30px;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 18px;  
+     width: 50%;
+      background-color: #fdfdfd;
+    box-shadow: 8px 5px 15px #585252;
+    opacity: 0.8;
+}
+
+#ContenedorEmpresario{
+    border-radius: 15px 50px 30px;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 18px;  
+     width: 60%;
+      background-color: #fdfdfd;
+     box-shadow: 8px 5px 15px #585252;
+    opacity: 0.8;
+}
+
+#ContenedorComercio{
+    border-radius: 15px 50px 30px;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 18px;  
+     width: 60%;
+      background-color: #fdfdfd;
+    box-shadow: 8px 5px 15px #585252;
+    opacity: 0.8;
+}
+
+img:hover {
+    filter: saturate(180%);
+}
+
+input,select,option,label{
+    font-family: Silka;
+}
+h3{
+    text-align: center;
+     font-family: BEQUIND;
+}
+
+ul{
+    text-align: center;
+    margin: 0;
+    list-style: none;
+    display:flex;
+    padding: 0,
+}
+
+#Boton1{
+        width: 100px;
+    }
+
+li{
+    padding: 20px;
+}
+
+
+@media (max-width: 780px){
+    #ContenedorIndex:hover{
+    opacity: 1;
+}
+
+#ContenedorInformacionPersonal:hover{
+    opacity: 1;
+}
+
+#ContenedorEstudiante:hover{
+    opacity: 1;
+}
+
+#ContenedorComercio:hover{
+     opacity: 1;
+}
+#ContenedorEmprendedor:hover{
+    opacity: 1;
+}
+ 
+#ContenedorEmpresario:hover{
+    opacity: 1;
+}
+
+#ContenedorIdea:hover{
+     opacity: 1;
+}
+    #ContenedorIndex{   
+     width: 100%;   
+}
+    #ContenedorInformacionPersonal{
+        width: 95%;
+    }
+    #ContenedorEstudiante{
+        width: 95%;
+    }
+    #ContenedorEmprendedor{
+        width: 95%;
+    }
+    #ContenedorIdea{
+        width: 95%;
+    }
+    #ContenedorEmpresario{
+        width: 95%;
+    }
+    #ContenedorComercio{
+        width: 95%;
+    }
+    #Boton1{
+        width: 90px;
+    }
+
+    
+    
+}

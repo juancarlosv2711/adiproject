@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estiloindex.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="navbar navbar-inverse" style="">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" id="Img" href=""><img src="Imagenes/fon2.ico" id="imgHeader" alt=""></a>
+                    <a class="navbar-brand" id="Telefono" href="tel:+50622379284">+50622379284</a>
+
+                </div>
+
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="mailto:info@adiojodeagua.org"><img id="imgHeader" src="Imagenes/Correo2.ico" alt=""> info@adisr.org</a></li>
+                        <li id="Asercar"><a href="https://maps.app.goo.gl/jNQJfAfhFZzVHYTXA"><img id="imgHeader" src="Imagenes/IconUbicacion.jpg" alt="">San Rafael,Heredia</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="https://www.facebook.com/adisr.org/" target="_blank"><img id="imgHeader" src="Imagenes/facebook2.ico" alt=""> Facebook</a></li>
+                        <li><a href="https://instagram.com/adisanrafael" target="_blank"><img id="imgHeader" src="Imagenes/Intagram2.ico" alt=""> Instagram</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- que está width: 100%en todos los puntos de interrupción -->
+        <form action="validarLogin.php" method="post" name="FormIngreso" autocomplete="off">
+            <div id="ContenedorInicial">
+                <div class="row">
+                    <div class="col">
+                        <img src="Imagenes/LogoPadi.png" class="img-rounded" id="ContenedorLogo">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <label>Correo Electrónico</label>
+                        <input id="correo" name="correo" type="email" class="form-control mr-5" placeholder="ejemplo@gmail.com" />
+                    </div>
+                    <div class="col-sm-12 col-md-12">
+                        <label>Digite su contraseña</label>
+                        <input type="password" class="form-control mr-5" id="contra" name="contra" placeholder="********" minlength="8" maxlength="16">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-auto">
+                        <button type="submit" class="btn btn-primary" name="Enviar">Iniciar Sesión</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-auto"><a href="Registro.html">Crear Cuenta</a></div>
+                    <div class="form-group"><a href="" data-toggle="modal" data-target="#exampleModal">¿Has olvidado la contraseña?</a></div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <form action="RecuperacionCorreo.php" method="post">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="" style="text-align:center">Digite Su Correo Electronico</label>
+                        <input id="correo" name="correomodal" type="email" class="form-control mr-5" placeholder="ejemplo@gmail.com" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary" name="Enviarmodal">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body></html>

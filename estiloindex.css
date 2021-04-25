@@ -1,0 +1,99 @@
+* {}
+
+label {
+    font-family: BEQUIND;
+}
+
+a {
+    font-family: BEBAS NEUE;
+}
+
+.row{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+input{
+    font-family: Silka;
+}
+button{
+    font-family: BEQUIND;
+}
+body {
+    background-image: url(Imagenes/Collage%20Tecnologia%202.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+    border-color: #33e872;
+
+    margin: 0 auto;
+
+    margin: 0 auto;
+
+}
+
+
+#imgHeader {
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    margin: 3px;
+}
+
+#Img {
+    padding-right: 5px;
+}
+
+#Telefono {
+    padding-left: 5px;
+}
+
+#ContenedorLogo {
+
+    border border-radius: 12px;
+
+    width: 200px;
+}
+
+
+#ContenedorInicial {
+    background-color: white;
+    border-color: #33e872;
+    box-shadow: 2px 2px 5px dimgrey;
+
+    border-radius: 15px;
+    margin: 100px auto;
+    width: 30%;
+    text-align: center;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+#ContenedorInicial:hover {
+    opacity: 1;
+}
+
+@media (max-width:780px) {
+   
+
+    #ContenedorInicial {
+        width: 75%;
+        margin: 40px auto;
+
+    }
+
+    #Img {
+        padding-right: 1px;
+    }
+
+    #Telefono {
+        padding-left: 1px;
+    }
+    #Asercar{
+     padding-left: 0px;
+}
+
+}

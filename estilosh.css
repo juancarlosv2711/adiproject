@@ -1,0 +1,161 @@
+body{
+   background: #ADA996;
+background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); 
+background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); 
+
+
+}
+#imgHeader {
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    margin: 3px;
+}
+
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+#navbarDropdown{
+    color: white;
+}
+
+
+#enlace{
+    width: 119.43px;
+}
+
+.container{
+    text-align: center;
+}
+
+#Contenedor{
+    width: 80%;
+    margin: auto;
+}
+
+button{
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+Footer{
+background-color: #000000;
+}
+
+li,a{
+    font-family: BEBAS NEUE;
+}
+
+h3{
+     font-family: BEQUIND;
+}
+th,td{
+    font-family: Silka;
+}
+
+ul#listaF,li{
+    text-align: center;
+    list-style: none;
+    display: inline;
+    
+}
+
+#imgF{
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    margin: 3px;
+}
+
+#carouselExampleIndicators{
+    margin-top: 20px;
+   
+}
+ .carousel-inner {
+  text-align: center;
+}
+
+#ListaBtn{   
+    display: block;
+    text-align: center;
+}
+
+#Descargables{
+    margin-top: 35px;
+    margin-bottom: 2px;
+     margin: auto;
+}
+#Datos{
+    margin: auto;
+     width: 90%;
+    margin-top: 20px;
+    text-align: center;    
+}
+
+#Datos table{
+    text-align: center;
+    margin: auto;
+    width: 90%;
+  
+}
+
+#Estilo_iframe{
+  box-shadow: 10px 10px 10px #303934; 
+  border-radius: 20px;  
+  width: 80%;
+    height: 340px;
+    margin-bottom: 30px;
+}
+
+
+
+@media (max-width: 780px){
+#Estilo_iframe{
+  box-shadow: 10px 10px 10px #303934; 
+  border-radius: 20px;  
+  
+  width: 100%;
+    height: 340px;
+    margin-bottom: 30px;
+}
+    #Contenedor{
+    width: 100%;
+    margin: auto;
+}
+    .carousel-inner {
+  text-align: center;
+}
+    #Datos{
+        width: 100%;
+    }    
+ #Datos table{
+    margin-top: 5px;
+    text-align: center;
+      width: 100%;
+}   
+#Descargas{
+     margin-top: 10px;
+    margin-bottom: 2px;
+}
+    #ListaBtn{   
+    display: block;
+    text-align: center;
+}
+    
+    ::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+}
